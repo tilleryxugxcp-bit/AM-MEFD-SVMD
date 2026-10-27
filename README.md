@@ -1,42 +1,56 @@
 # AM-MEFD-SVMD
-输水管道爆管振动试验的状态识别与特征提取
-算法说明：
 
-根据当前项目文档，章节标题及主要研究内容如下。
+**State Recognition and Feature Extraction of Burst Vibration Tests in Water Supply Pipelines**
 
-第二章：AM-MEFD/SVMD稳态-非稳态识别与特征提取方法
+**Algorithm Description:**
 
-本章侧重于方法与算法构建，主要研究内容包括：
+According to the current project document, the chapter titles and main research contents are as follows:
 
-    读取压力、流量和振动原始信号，并进行滤波和多源信号构造。
-    建立爆管前的自适应稳态基线，采用中位数和 MAD 描述稳态水平及波动尺度。
-    利用 SVMD 将压力和合成振动信号分解为多个模态，计算各模态能量。
-    采用 0.20 s 窗口、0.05 s 步长提取滑动时域特征，并采用 1.00 s 窗口提取频域特征。
-    综合压力下降、压力梯度、流量变化、振动能量和 SVMD 模态能量，构建 AM-MEFD 综合转捩指数。
-    通过自适应阈值和连续窗口判据识别稳态向非稳态转变的边界，即爆管响应时刻。
-    将信号划分为稳态段、短时非稳态段和爆管后最终稳定段。
-    提取均值、标准差、RMS、峰峰值、偏度、峭度、排列熵、主频、频谱质心和频带能量等特征。
-    利用压力下降和流量变化对识别结果进行水力机理验证。
-    将两组实验中的振动信号映射为固定测点、近爆管点和远爆管点。
+**Chapter 2: AM-MEFD/SVMD Steady-Unsteady State Recognition and Feature Extraction Method**
 
-本章的核心目标是：
+This chapter focuses on method and algorithm construction, with main research contents including:
 
-    建立一种融合压力、流量、振动和 SVMD 模态能量的稳态—非稳态边界识别及特征提取方法。
+* Reading raw signals of pressure, flow rate, and vibration, followed by filtering and multi-source signal construction.
+* Establishing an adaptive steady-state baseline before the pipe burst, using the median and MAD (Median Absolute Deviation) to describe the steady-state level and fluctuation scale.
+* Decomposing pressure and synthesized vibration signals into multiple modes using SVMD (Successive Variational Mode Decomposition) and calculating the energy of each mode.
+* Extracting sliding time-domain features using a 0.20 s window and a 0.05 s step size, and frequency-domain features using a 1.00 s window.
+* Constructing the AM-MEFD comprehensive transition index by integrating pressure drop, pressure gradient, flow rate change, vibration energy, and SVMD modal energy.
+* Identifying the boundary of the transition from steady-state to unsteady-state (i.e., the pipe burst response moment) through adaptive thresholds and consecutive window criteria.
+* Dividing the signal into steady-state segments, short-term unsteady-state segments, and post-burst final stable segments.
+* Extracting features such as mean, standard deviation, RMS, peak-to-peak value, skewness, kurtosis, permutation entropy, dominant frequency, spectral centroid, and band energy.
+* Performing hydraulic mechanism validation on the recognition results using pressure drop and flow rate changes.
+* Mapping vibration signals from the two groups of experiments into fixed measurement points, near-burst points, and far-burst points.
 
-第四章：基于AM-MEFD/SVMD的爆管多源响应与运行工况影响分析
+The core objective of this chapter is:
 
-本章侧重于结果分析与工程规律研究，主要研究内容包括：
+* To establish a steady-unsteady state boundary recognition and feature extraction method that integrates pressure, flow rate, vibration, and SVMD modal energy.
 
-    分析爆管前后压力、流量和振动信号的时程响应，比较不同信号对爆管事件的响应同步性。
-    以识别出的爆管时刻为时间零点，对不同工况的数据进行时间对齐和归一化比较。
-    选取代表工况，展示爆管边界附近压力、流量及不同振动测点的局部响应过程。
-    对稳态和非稳态振动信号进行 SVMD 时域分解与频谱分析，研究各模态的主频、能量占比及频带结构变化。
-    比较固定测点、近爆管点和远爆管点的 RMS、峰峰值和标准差等振动特征。
-    分析振动扰动随测点位置变化的传播和衰减规律，评价不同测点对爆管的敏感性。
-    研究转速和阀门开度对爆管响应时刻、压力降、流量变化和振动强度的影响。
-    分析压力、流量、振动及运行参数之间的相关关系。
-    利用全部工况验证 AM-MEFD/SVMD 识别结果的一致性和工程合理性。
+**Chapter 4: Multi-source Response and Operating Condition Impact Analysis of Pipe Bursts Based on AM-MEFD/SVMD**
 
-本章的核心目标是：
+This chapter focuses on result analysis and engineering regularity research, with main research contents including:
 
-    基于第二章提出的方法，揭示爆管过程中多源信号的非稳态响应特征，以及测点位置、转速和阀门开度对爆管响应的影响规律。
+* Analyzing the time-history responses of pressure, flow rate, and vibration signals before and after the pipe burst, and comparing the response synchronicity of different signals to the burst event.
+* Taking the identified pipe burst moment as time zero, conducting time alignment and normalization comparison for data under different operating conditions.
+* Selecting representative operating conditions to display the local response processes of pressure, flow rate, and different vibration measurement points near the burst boundary.
+* Performing SVMD time-domain decomposition and spectral analysis on steady-state and unsteady-state vibration signals to study the dominant frequency, energy ratio, and frequency band structure changes of each mode.
+* Comparing vibration features such as RMS, peak-to-peak value, and standard deviation among the fixed measurement point, near-burst point, and far-burst point.
+* Analyzing the propagation and attenuation laws of vibration disturbances as a function of measurement point location, and evaluating the sensitivity of different measurement points to pipe bursts.
+* Studying the effects of rotational speed and valve opening on the pipe burst response time, pressure drop, flow rate change, and vibration intensity.
+* Analyzing the correlation relationships among pressure, flow rate, vibration, and operating parameters.
+* Verifying the consistency and engineering rationality of the AM-MEFD/SVMD recognition results using all operating conditions.
+
+The core objective of this chapter is:
+
+* Based on the method proposed in Chapter 2, to reveal the unsteady response characteristics of multi-source signals during the pipe burst process, as well as the influence laws of measurement point location, rotational speed, and valve opening on the pipe burst response.
+
+The program data is divided into Vibration Point 1 and Vibration Point 2, where data1-data4 of Vibration Point 1 constitute the complete raw data for Vibration Point 1, and data1-data4 of Vibration Point 2 constitute the complete data for Vibration Point 2.
+
+---
+
+**Measurement Point Layout and Data Acquisition**
+
+Pressure measurement points are arranged at different positions along the pipeline, with a total of 8 pressure sensors set up to capture the formation, propagation, and attenuation processes of pressure waves before and after the pipe burst. Flow measurement is completed using an ultrasonic flowmeter, which is mainly used to record the trend of flow rate changes in the pipe before and after the burst event and conduct time-correlated analysis with pressure and vibration responses. Vibration measurements are arranged on the outer side of the pipe wall, focusing on collecting the local structural vibration response induced by burst disturbances.
+
+Due to limitations in data acquisition channels and sensor layout conditions, a phased measurement scheme is adopted for vibration measurement points. Both groups of experiments retain Vibration Point 1, whose position remains unchanged across the two groups and serves as a reference measurement point for vibration response; Vibration Point 2 is arranged closer to the pipe burst point at a distance of approximately 0.4 m; Vibration Point 3 is arranged farther from the pipe burst point at a distance of approximately 2.0 m. The two groups of experiments respectively collect the synchronous vibration responses of Vibration Point 1 with Vibration Point 2, and Vibration Point 1 with Vibration Point 3, ultimately forming 3 vibration observation points. Since the 3 positions are not sampled synchronously in the same experiment, subsequent comparisons are only used to analyze the differences in measurement point responses under identical operating condition settings, and strict synchronous transient propagation processes are not inferred from this. During the experiment, pressure, flow rate, and pipe wall vibration signals are simultaneously collected by the same data acquisition system, with a unified time base applied to all channels. The sampling frequency is set to 1000 Hz for all channels, and the single recording duration is 30 s, to fully cover stable operation, burst triggering, and unsteady response processes. Before formal acquisition, zero checks and signal calibrations are performed on all channels, and recording begins only after the outputs of pressure, flow rate, and vibration stabilize, thereby reducing the impact of channel drift and accidental noise on boundary recognition and feature statistics.
+
+The experiment takes centrifugal pump rotational speed and inlet valve opening as the main control variables. The centrifugal pump rotational speed is set to 30 Hz, 35 Hz, 40 Hz, 45 Hz, and 50 Hz, and the inlet valve opening is set to 40%, 60%, 80%, and 100%. Combining these two types of variables results in a total of 20 operating conditions, as shown in Table 2. Different rotational speeds correspond to different water supply power levels, and different valve openings correspond to different pipeline resistance conditions. Through full-condition combinations, the variation laws of pipe burst unsteady responses with operating parameters can be analyzed.
